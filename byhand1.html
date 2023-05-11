@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cookery Competition</title>
+</head>
+
+<body>
+    <h1>Cookery Competition</h1>
+    <form action="">
+        <div id="credentials">
+            <h2>Your registration details</h2>
+            <label for="firstname_id">
+                First Name
+                <input type="text" id="firstname_id" name="firstname" required>
+            </label>
+            <label for="lastname_id">
+                Last Name
+                <input type="text" id="lastname_id" name="lastname" required>
+            </label>
+            <p></p>
+            <label for="email_id">Email
+                <input type="email" id="email_id" name="email_name">
+            </label>
+            <label for="passwd_id">Password
+                <input type="password" id="passwd_id" name="passwd_value">
+            </label>
+            <p></p>
+            <div id="age_range_div">
+                <label for="age_range_id">Enter your age range:
+                    <select id="age_range_id" name="age_range">
+                        <option value="age_under18">under 18</option>
+                        <option value="age_18to30">18 to 30</option>
+                        <option value="age_31to40">31 to 40</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        <div id="cookery_selection">
+            <h2>Choose your cooking category</h2>
+            <div id="baking_div">
+                <input type="radio" name="cookery_group" id="baking_id" value="baking" checked>
+                <label for="baking_id">Baking</label>
+            </div>
+            <div id="french_div">
+                <input type="radio" name="cookery_group" id="french_id" value="french_cuisine">
+                <label for="french_id">French cuisine</label>
+            </div>
+            <div id="italian_div">
+                <input type="radio" name="cookery_group" id="italian_id" value="italian_cooking">
+                <label for="italian_id">Italian cooking</label>
+            </div>
+        </div>
+        <div id="credentials">
+
+        </div>
+
+        <div id="submission_div">
+            <h2>Ready to submit?</h2>
+            <button>Submit your application</button>
+        </div>
+    </form>
+</body>
+
+</html>
+
+<!-- file:///D:/Sandbox/git/aadennis/WebDev/CootBamp/byhand1.html?
+    firstname=Toby&lastname=Bamforth&email_name=tbam%40gmail.com&passwd_value=ASD&
+    cookery_group=french_cuisine&age_range=age_under18 -->
