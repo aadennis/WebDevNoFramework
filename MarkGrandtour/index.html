@@ -5,25 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Grand Tour 2024</title>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css"> <!-- Main styles for the page -->
 </head>
 <body>
+    <!-- Fixed header/banner -->
     <div class="banner">
         <div>
             <h1>The Grand Tour 2024</h1>
             <h2>Destination Italy via the European Train Network</h2>
         </div>
     </div>
-    <div class="content">
-        <p>This is a simple static website with a banner background, now styled with a dark theme for better contrast.</p>
 
-        <!-- Links to Blog Entries -->
-        <h3>Recent Blog Posts</h3>
+    <!-- Content area where blog posts will be loaded -->
+    <div class="content" id="blog-content">
+        <p>Select a blog post to read:</p>
         <ul>
-            <li><a href="blog-entry-1.html" style="color: #007BFF; text-decoration: none;">The Curious Journey of a Bag (12.09.2024)</a></li>
-            <li><a href="blog-entry-2.html" style="color: #007BFF; text-decoration: none;">A Night in Venice (14.09.2024)</a></li>
-            <li><a href="blog-entry-3.html" style="color: #007BFF; text-decoration: none;">Train Ride through Tuscany (18.09.2024)</a></li>
+            <li><a href="#" onclick="loadBlogPost('blog-entry-1.html')">The Curious Journey of a Bag</a></li>
+            <li><a href="#" onclick="loadBlogPost('blog-entry-2.html')">A Night in Venice</a></li>
+            <li><a href="#" onclick="loadBlogPost('blog-entry-3.html')">Train Ride through Tuscany</a></li>
         </ul>
+
+        <!-- Placeholder where blog content will be injected -->
+        <div id="post-container"></div>
     </div>
+
+    <!-- JavaScript to load blog posts dynamically -->
+    <script>
+        function loadBlogPost(postUrl) {
+            // Fetch the content of the selected blog entry
+            fetch(postUrl)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('post-container').innerHTML = data;
+            })
+            .catch(error => {
+                document.getElementById('post-container').innerHTML = "<p>Error loading blog post.</p>";
+            });
+        }
+    </script>
 </body>
 </html>
+
