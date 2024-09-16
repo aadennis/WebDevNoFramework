@@ -1,0 +1,41 @@
+/* styles.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #333333; /* Dark gray background */
+    color: white; /* White text for contrast */
+}
+
+.banner {
+    background-image: url('tgv02.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.banner h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 60px;
+    color: #f2f2f2;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background for readability */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.banner h2 {
+    font-size: 30px;
+    color: #eaeaea;
+    margin-top: 10px;
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+    ba
