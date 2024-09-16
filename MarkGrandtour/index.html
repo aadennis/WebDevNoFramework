@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Static Website with Banner</title>
+    <title>The Grand Tour 2024</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <style>
-        body, html {
+        body,
+        html {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
@@ -21,13 +24,22 @@
             align-items: center;
             color: white;
             text-align: center;
+            position: relative;
         }
 
         .banner h1 {
-            font-size: 50px;
+            font-family: 'Lobster', cursive;
+            font-size: 60px;
+            color: #f2f2f2;
             background-color: rgba(0, 0, 0, 0.5);
             padding: 20px;
             border-radius: 10px;
+        }
+
+        .banner h2 {
+            font-size: 30px;
+            color: #eaeaea;
+            margin-top: 10px;
         }
 
         .content {
@@ -36,12 +48,17 @@
         }
     </style>
 </head>
+
 <body>
     <div class="banner">
-        <h1>Welcome to My Website</h1>
+        <div>
+            <h1>The Grand Tour 2024</h1>
+            <h2>Destination Italy via the European Train Network</h2>
+        </div>
     </div>
     <div class="content">
         <p>This is a simple static website with a banner background.</p>
     </div>
 </body>
+
 </html>
