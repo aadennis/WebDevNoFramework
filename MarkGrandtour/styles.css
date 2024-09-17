@@ -11,7 +11,7 @@ html {
 }
 
 /* Fixed banner (header) */
-.banner {
+.bannerx {
   background-image: url("tgv02.jpg");
   background-size: cover;
   background-position: center;
@@ -39,12 +39,12 @@ html {
 }
 
 /* Blog entry style */
-.blog-entry {
+/* .blog-entry {
   background-color: #444444;
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 30px;
-}
+} */
 
 /* Blog header style */
 .blog-header h1 {
@@ -82,7 +82,7 @@ img {
 }
 
 .blog-image {
-  width: 50%; /* Set the image width to 25% of the current container width */
+  width: 25%; /* Set the image width to 25% of the current container width */
   max-width: 300px; /* Optional: limit the image to a maximum width of 300px */
   min-width: 150px; /* Optional: set a minimum width to avoid it becoming too small */
   height: auto; /* Keep the aspect ratio of the image */
