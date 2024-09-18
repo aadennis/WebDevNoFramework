@@ -6,23 +6,24 @@ html {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  font-size: 12px; /* 16px is default root */
   background-color: #333333; /* Dark gray background */
   color: white; /* White text for contrast */
 }
 
-
 .banner-text {
-  color: orange;
-            font-weight: bold;
-            text-shadow: 
-                -2px -2px 0 #000,  
-                2px -2px 0 #000,  
-                -2px 2px 0 #000,  
-                2px 2px 0 #000;
+  color: white;
+  font-weight: bold;
+  text-shadow: 
+    -0.125rem -0.125rem 0 #2d04fa, 
+     0.125rem -0.125rem 0 #2d04fa,
+    -0.125rem 0.125rem 0 #2d04fa, 
+     0.125rem 0.125rem 0 #2d04fa;
 }
 
 .banner-h1 {
   font-size: 2.5rem;
+  float: right;
 }
 
 .banner-h2 {
@@ -30,7 +31,7 @@ html {
 }
 /* Fixed banner (header) */
 .banner {
-  background-image: url("tgv02.jpg");
+  background-image: url('tgv02.jpg');
   background-size: cover;
   background-position: center;
   height: 150px;
