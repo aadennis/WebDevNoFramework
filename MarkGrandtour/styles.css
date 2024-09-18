@@ -11,7 +11,7 @@ html {
 }
 
 /* Fixed banner (header) */
-.bannerx {
+.banner {
   background-image: url("tgv02.jpg");
   background-size: cover;
   background-position: center;
