@@ -140,7 +140,8 @@ img {
 }
 
 .carousel-item {
-  min-width: 25%; /* Each item takes 25% of the viewport width */
+  min-width: 25%; /* Each item takes 25%-50% of the viewport width */
+  max-width: 50%;
   scroll-snap-align: start; /* Snap to start of each item */
 }
 
