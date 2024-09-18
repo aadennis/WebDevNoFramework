@@ -127,3 +127,26 @@ img {
   }
 }
 
+.carousel {
+  width: 100%; /* Full viewport width */
+  overflow-x: scroll; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Snapping behavior */
+  display: flex; /* Align children in a row */
+}
+
+.carousel-track {
+  display: flex; /* Align photos in a row */
+  gap: 10px; /* Optional gap between items */
+}
+
+.carousel-item {
+  min-width: 25%; /* Each item takes 25% of the viewport width */
+  scroll-snap-align: start; /* Snap to start of each item */
+}
+
+.carousel img {
+  width: 100%; /* Ensure the image fits in the container */
+  height: auto;
+}
+
+
