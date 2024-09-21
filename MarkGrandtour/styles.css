@@ -150,4 +150,25 @@ img {
   height: auto;
 }
 
+/* Unvisited link */
+a {
+  color: #00aaff; /* Light blue color */
+}
+
+/* Visited link */
+a:visited {
+  color: #ff8800; /* Orange color */
+}
+
+/* Hovered link */
+a:hover {
+  color: #00ff00; /* Bright green */
+}
+
+/* Active link (when clicked) */
+a:active {
+  color: #ff0000; /* Red color */
+}
+
+
 
