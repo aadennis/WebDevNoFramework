@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css"> <!-- Main styles for the page -->
 </head>
+
 <body>
     <!-- Fixed header/banner -->
     <div class="banner">
@@ -18,15 +20,15 @@
 
     <!-- Content area where blog posts will be loaded -->
     <div class="content" id="blog-content">
-        <p>Select a blog post to read:</p>
+        <p>Blog posts in date sequence:</p>
         <ul>
             <li><a href="#" onclick="loadBlogPost('blog-entry-1.html')">The Curious Journey of a Bag</a></li>
             <li><a href="#" onclick="loadBlogPost('blog-entry-2.html')">Fine weather... just as we leave</a></li>
             <li><a href="#" onclick="loadBlogPost('blog-entry-3.html')">Don't travel on a Sunday</a></li>
-            <li><a href="#" onclick="loadBlogPost('blog-entry-4.html')">xDon't travel on a Sunday</a></li>
-            <li><a href="#" onclick="loadBlogPost('blog-entry-5.html')">xDon't travel on a Sunday</a></li>
-            <li><a href="#" onclick="loadBlogPost('blog-entry-6.html')">xDon't travel on a Sunday</a></li>
-            
+            <li><a href="#" onclick="loadBlogPost('blog-entry-4.html')">Morning at the hotel in Amsterdam</a></li>
+            <li><a href="#" onclick="loadBlogPost('blog-entry-5.html')">Relaxation med Rijksmuseum</a></li>
+            <li><a href="#" onclick="loadBlogPost('blog-entry-6.html')">Traffic and dead meat</a></li>
+
         </ul>
 
         <!-- Placeholder where blog content will be injected -->
@@ -38,15 +40,15 @@
         function loadBlogPost(postUrl) {
             // Fetch the content of the selected blog entry
             fetch(postUrl)
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('post-container').innerHTML = data;
-            })
-            .catch(error => {
-                document.getElementById('post-container').innerHTML = "<p>Error loading blog post.</p>";
-            });
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('post-container').innerHTML = data;
+                })
+                .catch(error => {
+                    document.getElementById('post-container').innerHTML = "<p>Error loading blog post.</p>";
+                });
         }
     </script>
 </body>
-</html>
 
+</html>
