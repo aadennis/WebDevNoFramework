@@ -1,8 +1,38 @@
-<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-  <!-- Fretboard development -->
-  <!-- Black background -->
-  <rect x="0" y="0" width="200" height="60" fill="black" />
+<svg width="240" height="100" viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg">
+    <title>Fretboard Diagram</title>
+    <desc>A simple SVG representation of a guitar fretboard with strings and a nut.</desc>
+    
+    <!-- Style for the SVG elements -->
+    <!-- <style>
+        rect {
+        fill: #333;
+        }
+        line {
+        stroke: white;
+        stroke-width: 1;
+        }
+    </style>     -->
+ <!-- Background -->
+  <rect x="0" y="0" width="240" height="100" fill="black" />
 
-  <!-- Nut (white rectangle across the top) -->
-  <rect x="0" y="10" width="200" height="10" fill="white" />
+  <!-- Nut -->
+  <rect x="20" y="20" width="200" height="10" fill="white" />
+
+  <!-- String lines definition -->
+  <defs>
+    <g id="string-set" stroke="white" stroke-width="1">
+      <!-- 6 strings, evenly spaced across 200 units -->
+      <!-- Distance between each = 200 / (6 - 1) = 40 -->
+      <!-- Start at x=20 (left margin), increment by 40 -->
+      <line x1="20" y1="30" x2="20" y2="80" />
+      <line x1="60" y1="30" x2="60" y2="80" />
+      <line x1="100" y1="30" x2="100" y2="80" />
+      <line x1="140" y1="30" x2="140" y2="80" />
+      <line x1="180" y1="30" x2="180" y2="80" />
+      <line x1="220" y1="30" x2="220" y2="80" />
+    </g>
+  </defs>
+
+  <!-- Use the defined string group -->
+  <use href="#string-set" />
 </svg>
