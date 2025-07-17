@@ -1,0 +1,52 @@
+<svg width="240" height="250" viewBox="0 0 240 250" xmlns="http://www.w3.org/2000/svg">
+  <title>Fretboard Diagram – A Major</title>
+  <desc>SVG representation of a guitar fretboard with A major chord markers.</desc>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="240" height="250" fill="black" />
+
+  <!-- Nut -->
+  <rect x="10" y="20" width="220" height="10" fill="white" />
+
+  <defs>
+    <!-- String lines -->
+    <g id="string-set" stroke="white" stroke-width="1">
+      <line x1="20" y1="10" x2="20" y2="250" />
+      <line x1="60" y1="10" x2="60" y2="250" />
+      <line x1="100" y1="10" x2="100" y2="250" />
+      <line x1="140" y1="10" x2="140" y2="250" />
+      <line x1="180" y1="10" x2="180" y2="250" />
+      <line x1="220" y1="10" x2="220" y2="250" />
+    </g>
+
+    <!-- Frets -->
+    <g id="fret-set" stroke="#EEDD40" stroke-width="5">
+      <line x1="20" y1="70" x2="220" y2="70" />
+      <line x1="20" y1="110" x2="220" y2="110" />
+      <line x1="20" y1="150" x2="220" y2="150" />
+      <line x1="20" y1="190" x2="220" y2="190" />
+      <line x1="20" y1="230" x2="220" y2="230" />
+    </g>
+
+    <!-- A Major chord markers -->
+    <g id="a-major">
+      <!-- Above nut markers (y = 10) -->
+      <text x="20" y="10" font-size="12" fill="white" text-anchor="middle">X</text>   <!-- string 6 -->
+      <text x="60" y="10" font-size="12" fill="white" text-anchor="middle">O</text>   <!-- string 5 -->
+      <text x="100" y="10" font-size="12" fill="white" text-anchor="middle">●</text>  <!-- string 4 -->
+      <text x="140" y="10" font-size="12" fill="white" text-anchor="middle">●</text>  <!-- string 3 -->
+      <text x="180" y="10" font-size="12" fill="white" text-anchor="middle">●</text>  <!-- string 2 -->
+      <text x="220" y="10" font-size="12" fill="white" text-anchor="middle">O</text>   <!-- string 1 -->
+
+      <!-- Finger markers (fret 2 = y = 130) -->
+      <circle cx="60" cy="130" r="6" fill="red" />
+      <circle cx="100" cy="130" r="6" fill="red" />
+      <circle cx="140" cy="130" r="6" fill="red" />
+    </g>
+  </defs>
+
+  <!-- Apply layout and chord -->
+  <use href="#string-set" />
+  <use href="#fret-set" />
+  <use href="#a-major" />
+</svg>
