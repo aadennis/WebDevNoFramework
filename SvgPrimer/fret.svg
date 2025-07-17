@@ -31,8 +31,19 @@
       <line x1="180" y1="30" x2="180" y2="80" />
       <line x1="220" y1="30" x2="220" y2="80" />
     </g>
+
+    <g id="fret-set" stroke="grey" stroke-width="2">
+      <!-- 5 frets at y = 40, 50, 60, 70, 80 -->
+      <line x1="20" y1="40" x2="220" y2="40" />
+      <line x1="20" y1="50" x2="220" y2="50" />
+      <line x1="20" y1="60" x2="220" y2="60" />
+      <line x1="20" y1="70" x2="220" y2="70" />
+      <line x1="20" y1="80" x2="220" y2="80" />
+    </g>
   </defs>
 
-  <!-- Use the defined string group -->
+  <!-- Apply string and fret sets -->
   <use href="#string-set" />
+  <use href="#fret-set" />
+
 </svg>
