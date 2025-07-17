@@ -1,4 +1,4 @@
-<svg width="240" height="100" viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg">
+<svg width="240" height="250" viewBox="0 0 240 250" xmlns="http://www.w3.org/2000/svg">
     <title>Fretboard Diagram</title>
     <desc>A simple SVG representation of a guitar fretboard with strings and a nut.</desc>
     
@@ -13,34 +13,33 @@
         }
     </style>     -->
  <!-- Background -->
-  <rect x="0" y="0" width="240" height="100" fill="black" />
+  <rect x="0" y="0" width="240" height="250" fill="black" />
 
   <!-- Nut: wider than string set -->
   <rect x="10" y="20" width="220" height="10" fill="white" />
 
   <!-- String lines definition -->
-  <defs>
+<defs>
     <g id="string-set" stroke="white" stroke-width="1">
-      <!-- 6 strings, evenly spaced across 200 units -->
-      <!-- Distance between each = 200 / (6 - 1) = 40 -->
-      <!-- Start at x=20 (left margin), increment by 40 -->
-      <line x1="20" y1="30" x2="20" y2="80" />
-      <line x1="60" y1="30" x2="60" y2="80" />
-      <line x1="100" y1="30" x2="100" y2="80" />
-      <line x1="140" y1="30" x2="140" y2="80" />
-      <line x1="180" y1="30" x2="180" y2="80" />
-      <line x1="220" y1="30" x2="220" y2="80" />
+      <!-- x values: 20, 60, 100, 140, 180, 220 -->
+      <line x1="20" y1="30" x2="20" y2="230" />
+      <line x1="60" y1="30" x2="60" y2="230" />
+      <line x1="100" y1="30" x2="100" y2="230" />
+      <line x1="140" y1="30" x2="140" y2="230" />
+      <line x1="180" y1="30" x2="180" y2="230" />
+      <line x1="220" y1="30" x2="220" y2="230" />
     </g>
 
     <g id="fret-set" stroke="grey" stroke-width="2">
-      <!-- 5 frets at y = 40, 50, 60, 70, 80 -->
-      <line x1="20" y1="40" x2="220" y2="40" />
-      <line x1="20" y1="50" x2="220" y2="50" />
-      <line x1="20" y1="60" x2="220" y2="60" />
+      <!-- y values: 70, 110, 150, 190, 230 -->
       <line x1="20" y1="70" x2="220" y2="70" />
-      <line x1="20" y1="80" x2="220" y2="80" />
+      <line x1="20" y1="110" x2="220" y2="110" />
+      <line x1="20" y1="150" x2="220" y2="150" />
+      <line x1="20" y1="190" x2="220" y2="190" />
+      <line x1="20" y1="230" x2="220" y2="230" />
     </g>
   </defs>
+
 
   <!-- Apply string and fret sets -->
   <use href="#string-set" />
