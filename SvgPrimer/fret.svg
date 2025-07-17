@@ -30,8 +30,7 @@
       <line x1="220" y1="30" x2="220" y2="230" />
     </g>
 
-    <g id="fret-set" stroke="grey" stroke-width="2">
-      <!-- y values: 70, 110, 150, 190, 230 -->
+    <g id="fret-set" stroke="#EEDD40" stroke-width="5">
       <line x1="20" y1="70" x2="220" y2="70" />
       <line x1="20" y1="110" x2="220" y2="110" />
       <line x1="20" y1="150" x2="220" y2="150" />
