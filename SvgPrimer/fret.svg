@@ -1,0 +1,8 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fretboard development -->
+  <!-- Black background -->
+  <rect x="0" y="0" width="200" height="60" fill="black" />
+
+  <!-- Nut (white rectangle across the top) -->
+  <rect x="0" y="10" width="200" height="10" fill="white" />
+</svg>
