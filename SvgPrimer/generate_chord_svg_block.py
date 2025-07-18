@@ -41,3 +41,15 @@ def generate_chord_svg_block(chord_id, chord_name, string_map):
 
     lines.append('</g>')
     return '\n'.join(lines)
+
+
+def main():
+    a_major = ['X', 0, 2, 2, 2, 0]
+    svg_block = generate_chord_svg_block('a-major', 'A Major', a_major)
+    print(svg_block)
+
+
+if __name__ == "__main__":
+    main()
+
+    
