@@ -30,27 +30,27 @@
 
   <!-- Inject the output from generate_chord_svg.py here -->
   <!-- start -->
-  <g id="a-major">
-    <desc>
-      Chord: A Major
-      E - X
-      A - 0
-      D - 2
-      G - 2
-      B - 2
-      e - 0
-    </desc>
+    <g id="a-major">
+      <desc>
+        Chord: A Major
+        E - X
+        A - 0
+        D - 2
+        G - 2
+        B - 2
+        e - 0
+      </desc>
 
-    <text x="20" y="10" font-size="12" fill="white" text-anchor="middle">X</text>
-    <text x="60" y="10" font-size="12" fill="white" text-anchor="middle">O</text>
-    <text x="100" y="10" font-size="12" fill="white" text-anchor="middle">●</text>
-    <text x="140" y="10" font-size="12" fill="white" text-anchor="middle">●</text>
-    <text x="180" y="10" font-size="12" fill="white" text-anchor="middle">●</text>
-    <text x="220" y="10" font-size="12" fill="white" text-anchor="middle">O</text>
-    <circle cx="100" cy="90" r="6" fill="red" />
-    <circle cx="140" cy="90" r="6" fill="red" />
-    <circle cx="180" cy="90" r="6" fill="red" />
-  </g>
+      <text x="20" y="10" font-size="12" fill="white" text-anchor="middle">X</text>
+      <text x="60" y="10" font-size="12" fill="white" text-anchor="middle">O</text>
+      <text x="100" y="10" font-size="12" fill="white" text-anchor="middle">●</text>
+      <text x="140" y="10" font-size="12" fill="white" text-anchor="middle">●</text>
+      <text x="180" y="10" font-size="12" fill="white" text-anchor="middle">●</text>
+      <text x="220" y="10" font-size="12" fill="white" text-anchor="middle">O</text>
+      <circle cx="100" cy="90" r="6" fill="red" />
+      <circle cx="140" cy="90" r="6" fill="red" />
+      <circle cx="180" cy="90" r="6" fill="red" />
+    </g>
   <!-- end -->
   </defs>
 
