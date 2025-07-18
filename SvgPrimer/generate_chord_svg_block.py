@@ -7,7 +7,7 @@ def generate_chord_svg_block(chord_id, chord_name, string_map):
     string_labels = ['E', 'A', 'D', 'G', 'B', 'e']
     x_positions = [20, 60, 100, 140, 180, 220]
     y_nut = 10
-    y_fret_base = 70
+    y_fret_1 = 30         # Starting position of fret 1
     fret_spacing = 40
     marker_radius = 6
 
@@ -29,14 +29,15 @@ def generate_chord_svg_block(chord_id, chord_name, string_map):
         elif isinstance(value, int) and value > 0:
             marker = '●'
         else:
-            continue  # skip invalid
+            continue
         lines.append(f'  <text x="{x}" y="{y_nut}" font-size="12" fill="white" text-anchor="middle">{marker}</text>')
 
     # Finger markers
     for i, value in enumerate(string_map):
         if isinstance(value, int) and value > 0:
             x = x_positions[i]
-            y = y_fret_base + (value - 1) * fret_spacing + fret_spacing // 2  # midpoint between frets
+            # y = midpoint between fret N−1 and N
+            y = y_fret_1 + (value - 1) * fret_spacing + (fret_spacing // 2)
             lines.append(f'  <circle cx="{x}" cy="{y}" r="{marker_radius}" fill="red" />')
 
     lines.append('</g>')
@@ -51,5 +52,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    
