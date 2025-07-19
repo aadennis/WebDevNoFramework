@@ -19,9 +19,9 @@ def generate_svg_positions(chord_code, chord_name=""):
         elif fret == '0':
             svg.append(f'<text class="fret-label" x="{x}" y="5">0</text>')
         elif fret.isdigit():
-            y = 10 + int(fret) * fret_spacing
+            y = int(fret) * fret_spacing
             svg.append(f'<circle class="dot-active" cx="{x}" cy="{y}" r="6" />')
-            svg.append(f'<text class="fret-label" x="{x}" y="{y - 5}">{fret}</text>')
+            # No fret label for fretted notes
         else:
             svg.append(f'<!-- Invalid input on string {6 - i}: {fret} -->')
 
@@ -30,7 +30,7 @@ def generate_svg_positions(chord_code, chord_name=""):
 
 
 def main():
-    chord_code = "X02220"       # A major, from string 6 to string 1
+    chord_code = "X02220"       # A major, low E to high e
     chord_name = "A Major"      # Displayed at top of diagram
     svg_output = generate_svg_positions(chord_code, chord_name)
     print(svg_output)
