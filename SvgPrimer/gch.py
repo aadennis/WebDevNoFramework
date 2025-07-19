@@ -1,3 +1,5 @@
+import re
+
 def generate_svg_positions(chord_code, chord_name=""):
     """
     Generates SVG elements from a 6-char chord code.
@@ -8,7 +10,6 @@ def generate_svg_positions(chord_code, chord_name=""):
     string_spacing = 30
     fret_spacing = 40
 
-    # Chord name label
     if chord_name:
         svg.append(f'<text class="fret-label" x="85" y="-2">{chord_name}</text>')
 
@@ -34,7 +35,7 @@ def generate_full_html(chord_code, chord_name=""):
     """
     svg_positions = generate_svg_positions(chord_code, chord_name)
 
-    html = f"""<!DOCTYPE html>
+    return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -70,17 +71,27 @@ def generate_full_html(chord_code, chord_name=""):
   </svg>
 </body>
 </html>"""
-    return html
+
+
+def sanitize_filename(chord_name):
+    # Replace spaces and special chars with hyphens, force lowercase
+    name = re.sub(r'\s+', '-', chord_name.strip())
+    name = re.sub(r'[^\w\-]', '', name)  # Remove non-filename-safe chars
+    return f"chord-{name.lower()}.html"
 
 
 def main():
     chord_code = "X32010"
     chord_name = "C Major"
     html_output = generate_full_html(chord_code, chord_name)
-    print(html_output)
+
+    filename = sanitize_filename(chord_name)
+
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(html_output)
+
+    print(f"✅ Generated: {filename}")
 
 
 if __name__ == "__main__":
     main()
-
-    
