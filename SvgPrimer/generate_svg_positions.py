@@ -30,8 +30,8 @@ def generate_svg_positions(chord_code, chord_name=""):
 
 
 def main():
-    chord_code = "X02220"       # A major, low E to high e
-    chord_name = "A Major"      # Displayed at top of diagram
+    chord_code = "X02220"; chord_name = "A Major" 
+    chord_code = "X32010"; chord_name = "C Major"  
     svg_output = generate_svg_positions(chord_code, chord_name)
     print(svg_output)
 
