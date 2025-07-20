@@ -103,6 +103,40 @@ def generate_string_lines(x_start=10, string_spacing=30, y_string_start=30, stri
 
     return '\n'.join(lines)
 
+def generate_svg_positions(
+    chord_code,
+    chord_name="",
+    x_start=10,
+    string_spacing=30,
+    fret_spacing=40,
+    y_marker_top=25,
+    y_chord_label=-2
+):
+    """
+    Generates SVG elements from a 6-char chord code.
+    chord_code: string 6 to 1 (low E → high e), e.g. 'X32010'
+    chord_name: label above the diagram
+    """
+    svg = []
+
+    if chord_name:
+        svg.append(f'    <text class="fret-label" x="85" y="{y_chord_label}">{chord_name}</text>')
+
+    for i, fret in enumerate(chord_code):
+        x = x_start + i * string_spacing
+
+        if fret.upper() == 'X':
+            svg.append(f'    <text class="string-muted" x="{x}" y="{y_marker_top}">X</text>')
+        elif fret == '0':
+            svg.append(f'    <text class="fret-label" x="{x}" y="{y_marker_top}">0</text>')
+        elif fret.isdigit():
+            y = int(fret) * fret_spacing
+            svg.append(f'    <circle class="dot-active" cx="{x}" cy="{y}" r="6" />')
+        else:
+            svg.append(f'<!-- Invalid input on string {6 - i}: {fret} -->')
+
+    return '\n'.join(svg)
+
 
 def main():
     chord_code = "X32010"
