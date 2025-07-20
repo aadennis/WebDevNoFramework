@@ -35,6 +35,7 @@ def generate_full_html(chord_code, chord_name=""):
     """
     svg_positions = generate_svg_positions(chord_code, chord_name)
     fret_lines = generate_fret_lines()
+    string_lines = generate_string_lines()
 
 
     return f"""<!DOCTYPE html>
@@ -51,13 +52,10 @@ def generate_full_html(chord_code, chord_name=""):
        preserveAspectRatio="xMidYMid meet"
        class="fretboard">
 
-    <!-- Strings -->
-    <line class="string-line" x1="10" y1="10" x2="10" y2="190" />
-    <line class="string-line" x1="40" y1="10" x2="40" y2="190" />
-    <line class="string-line" x1="70" y1="10" x2="70" y2="190" />
-    <line class="string-line" x1="100" y1="10" x2="100" y2="190" />
-    <line class="string-line" x1="130" y1="10" x2="130" y2="190" />
-    <line class="string-line" x1="160" y1="10" x2="160" y2="190" />
+    <!-- inject:strings -->
+    <!-- START strings -->
+{string_lines}
+    <!-- END strings -->
 
     <!-- inject:frets -->
     <!-- START frets -->
@@ -79,7 +77,7 @@ def sanitize_filename(chord_name):
     name = re.sub(r'[^\w\-]', '', name)  # Remove non-filename-safe chars
     return f"chord-{name.lower()}.html"
 
-def generate_fret_lines(y_fret_start=10, y_fret_increment=40, num_frets=5):
+def generate_fret_lines(y_fret_start=30, y_fret_increment=40, num_frets=5):
     """
     Dynamically generates SVG <line> elements for fret bars.
     """
@@ -89,6 +87,19 @@ def generate_fret_lines(y_fret_start=10, y_fret_increment=40, num_frets=5):
         x1 = 10 if i != 0 else 8
         x2 = 160 if i != 0 else 162
         lines.append(f'    <line class="fret-bar" x1="{x1}" y1="{y}" x2="{x2}" y2="{y}" />')
+
+    return '\n'.join(lines)
+
+def generate_string_lines(x_start=10, string_spacing=30, y_string_start=30, string_length=180, num_strings=6):
+    """
+    Dynamically generates SVG <line> elements for vertical string lines.
+    """
+    lines = []
+    for i in range(num_strings):
+        x = x_start + i * string_spacing
+        y1 = y_string_start
+        y2 = y_string_start + string_length
+        lines.append(f'<line class="string-line" x1="{x}" y1="{y1}" x2="{x}" y2="{y2}" />')
 
     return '\n'.join(lines)
 
