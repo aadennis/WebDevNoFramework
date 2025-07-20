@@ -135,6 +135,7 @@ def main():
     chord_code = "X35555"; chord_name = "C6"
     chord_code = "X57777"; chord_name = "D6"
     chord_code = "XX5443"; chord_name = "G aug"
+    chord_code = "X022XX"; chord_name = "A5"
     
     
     
