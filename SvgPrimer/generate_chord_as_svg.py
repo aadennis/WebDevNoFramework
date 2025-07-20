@@ -114,12 +114,16 @@ def generate_svg_positions(
 
 
 def main():
-    chord_code = "X32010"
-    chord_name = "C Major"
+    # Example chord codes and names
+    chord_code = "X02220"; chord_name = "A Major" 
+    chord_code = "X32010"; chord_name = "C Major"  
+    chord_code = "XX3213"; chord_name = "Fadd9"
+    chord_code = "XX0232"; chord_name = "D Major" 
+    chord_code = "022000"; chord_name = "E minor" 
+    
     html_output = generate_full_html(chord_code, chord_name)
 
     filename = sanitize_filename(chord_name)
-
     with open(filename, "w", encoding="utf-8") as f:
         f.write(html_output)
 
