@@ -124,6 +124,18 @@ def main():
     chord_code = "XX0232"; chord_name = "D Major" 
     chord_code = "022000"; chord_name = "E minor" 
     chord_code = "353533"; chord_name = "G7 sus4" 
+    chord_code = "X5453X"; chord_name = "D7 version 2"
+    chord_code = "X24432"; chord_name = "B minor" 
+    chord_code = "X32030"; chord_name = "C add9"
+    chord_code = "XX3211"; chord_name = "F*"
+    chord_code = "020000"; chord_name = "Em7 version 1"
+    chord_code = "022030"; chord_name = "Em7 version 2"
+    chord_code = "X21202"; chord_name = "B7"
+    chord_code = "X02223"; chord_name = "A7 version 2"
+    chord_code = "X35555"; chord_name = "C6"
+    chord_code = "X57777"; chord_name = "D6"
+    chord_code = "XX5443"; chord_name = "G aug"
+    
     
     
     html_output = generate_full_html(chord_code, chord_name)
