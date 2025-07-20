@@ -1,0 +1,19 @@
+X02220 | A Major
+X32010 | C Major
+XX3213 | Fadd9
+XX0232 | D Major
+022000 | E minor
+353533 | G7 sus4
+X5453X | D7 version 2
+X24432 | B minor
+X32030 | C add9
+XX3211 | F*
+020000 | Em7 version 1
+022030 | Em7 version 2
+X21202 | B7
+X02223 | A7 version 2
+X35555 | C6
+X57777 | D6
+XX5443 | G aug
+X022XX | A5
+

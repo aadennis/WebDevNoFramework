@@ -68,15 +68,7 @@ def generate_svg_positions(
             y = fret_number * fret_spacing + y_marker_top - dot_radius
             svg.append(f'<circle class="dot-active" cx="{x}" cy="{y}" r="{dot_radius}" />')
             svg.append(f'<rect class="note-box" x="{x - 8}" y="{y - 22}" width="16" height="16" rx="2" />')
-            svg.append(f'<text class="note-label" x="{x}" y="{y - 10}">{note}</text>')
-        elif fret.isdigit():
-            fret_number = int(fret)
-            note = note_at(string_index, fret_number)
-            y = fret_number * fret_spacing + y_marker_top - dot_radius
-            svg.append(f'<circle class="dot-active" cx="{x}" cy="{y}" r="{dot_radius}" />')
-            svg.append(f'<text class="note-label" x="{x}" y="{y - 10}">{note}</text>')
-        else:
-            svg.append(f'<!-- Invalid input on string {6 - i}: {fret} -->')
+            svg.append(f'<text class="note-label" x="{x}" y="{y - 10}">{note}</text>')       
 
     return '\n'.join(svg)
 
@@ -115,38 +107,25 @@ def generate_full_html(chord_code, chord_name=""):
 </body>
 </html>"""
 
-# --- Execution Stub ---
-def main():
-    # Example chord codes and names
-    chord_code = "X02220"; chord_name = "A Major" 
-    chord_code = "X32010"; chord_name = "C Major"  
-    chord_code = "XX3213"; chord_name = "Fadd9"
-    chord_code = "XX0232"; chord_name = "D Major" 
-    chord_code = "022000"; chord_name = "E minor" 
-    chord_code = "353533"; chord_name = "G7 sus4" 
-    chord_code = "X5453X"; chord_name = "D7 version 2"
-    chord_code = "X24432"; chord_name = "B minor" 
-    chord_code = "X32030"; chord_name = "C add9"
-    chord_code = "XX3211"; chord_name = "F*"
-    chord_code = "020000"; chord_name = "Em7 version 1"
-    chord_code = "022030"; chord_name = "Em7 version 2"
-    chord_code = "X21202"; chord_name = "B7"
-    chord_code = "X02223"; chord_name = "A7 version 2"
-    chord_code = "X35555"; chord_name = "C6"
-    chord_code = "X57777"; chord_name = "D6"
-    chord_code = "XX5443"; chord_name = "G aug"
-    chord_code = "X022XX"; chord_name = "A5"
-    
-    
-    
-    html_output = generate_full_html(chord_code, chord_name)
-    filename = 'svg_chord_output/' + sanitize_filename(chord_name)
+# --- Batch Execution ---
+def read_chord_definitions(filepath):
+    with open(filepath, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or '|' not in line:
+                continue
+            chord_code, chord_name = map(str.strip, line.split('|', 1))
+            yield chord_code, chord_name
 
-    with open(filename, "w", encoding="utf-8") as f:
-        f.write(html_output)
-
-    print(f"✅ Generated: {filename}")
+def batch_generate_html(input_file="code/chords.txt", output_dir="svg_chord_output"):
+    for chord_code, chord_name in read_chord_definitions(input_file):
+        html_output = generate_full_html(chord_code, chord_name)
+        filename = f"{output_dir}/{sanitize_filename(chord_name)}"
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write(html_output)
+        print(f"✅ Generated: {filename}")
 
 if __name__ == "__main__":
-    main()
+    batch_generate_html()
+
     
