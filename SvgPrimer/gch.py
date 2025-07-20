@@ -110,7 +110,8 @@ def generate_svg_positions(
     string_spacing=30,
     fret_spacing=40,
     y_marker_top=25,
-    y_chord_label=-2
+    y_chord_label=-2,
+    dot_radius=6
 ):
     """
     Generates SVG elements from a 6-char chord code.
@@ -130,8 +131,11 @@ def generate_svg_positions(
         elif fret == '0':
             svg.append(f'    <text class="fret-label" x="{x}" y="{y_marker_top}">0</text>')
         elif fret.isdigit():
-            y = int(fret) * fret_spacing
-            svg.append(f'    <circle class="dot-active" cx="{x}" cy="{y}" r="6" />')
+            fret_number = int(fret)
+            visual_fret = fret_number   # Shift down one "step" to avoid crowding nut
+            
+            y = visual_fret * fret_spacing + y_marker_top - dot_radius  # Use same baseline as markers
+            svg.append(f'    <circle class="dot-active" cx="{x}" cy="{y}" r="{dot_radius}" />')
         else:
             svg.append(f'<!-- Invalid input on string {6 - i}: {fret} -->')
 
