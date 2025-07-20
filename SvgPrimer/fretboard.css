@@ -45,4 +45,20 @@
 .fret-bar {
   stroke: #666;
   stroke-width: 4;
+  
+}
+
+.note-box {
+  fill: white;
+  stroke: #0077cc;
+  stroke-width: 0.5;
+  opacity: 0.9;
+}
+
+.open-note, .note-label {
+  font-family: sans-serif;
+  font-size: 12px;
+  fill: #0077cc;
+  text-anchor: middle;
+  pointer-events: none;
 }

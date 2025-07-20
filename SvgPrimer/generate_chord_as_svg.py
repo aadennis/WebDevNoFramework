@@ -60,7 +60,15 @@ def generate_svg_positions(
             svg.append(f'<text class="string-muted" x="{x}" y="{y_marker_top}">X</text>')
         elif fret == "0":
             note = note_at(string_index, 0)
+            svg.append(f'<rect class="note-box" x="{x - 8}" y="{y_marker_top - 12}" width="16" height="16" rx="2" />')
             svg.append(f'<text class="open-note" x="{x}" y="{y_marker_top}">{note}</text>')
+        elif fret.isdigit():
+            fret_number = int(fret)
+            note = note_at(string_index, fret_number)
+            y = fret_number * fret_spacing + y_marker_top - dot_radius
+            svg.append(f'<circle class="dot-active" cx="{x}" cy="{y}" r="{dot_radius}" />')
+            svg.append(f'<rect class="note-box" x="{x - 8}" y="{y - 22}" width="16" height="16" rx="2" />')
+            svg.append(f'<text class="note-label" x="{x}" y="{y - 10}">{note}</text>')
         elif fret.isdigit():
             fret_number = int(fret)
             note = note_at(string_index, fret_number)
