@@ -19,7 +19,7 @@ def sanitize_filename(chord_name):
     return f"chord-{name.lower()}.html"
 
 # --- Diagram Generators ---
-def generate_fret_lines(y_fret_start=30, y_fret_increment=40, num_frets=5):
+def generate_fret_lines(y_fret_start=30, y_fret_increment=40, num_frets=6):
     lines = []
     for i in range(num_frets):
         y = y_fret_start + i * y_fret_increment
@@ -28,7 +28,7 @@ def generate_fret_lines(y_fret_start=30, y_fret_increment=40, num_frets=5):
         lines.append(f'<line class="fret-bar" x1="{x1}" y1="{y}" x2="{x2}" y2="{y}" />')
     return '\n'.join(lines)
 
-def generate_string_lines(x_start=10, string_spacing=30, y_string_start=30, string_length=180, num_strings=6):
+def generate_string_lines(x_start=10, string_spacing=30, y_string_start=30, string_length=220, num_strings=6):
     lines = []
     for i in range(num_strings):
         x = x_start + i * string_spacing
@@ -95,8 +95,8 @@ def generate_full_html(chord_code, chord_name=""):
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg"
-       width="200" height="200"
-       viewBox="-10 -20 220 220"
+       width="200" height="280"
+       viewBox="-10 -20 220 300"
        preserveAspectRatio="xMidYMid meet"
        class="fretboard">
 
@@ -123,6 +123,8 @@ def main():
     chord_code = "XX3213"; chord_name = "Fadd9"
     chord_code = "XX0232"; chord_name = "D Major" 
     chord_code = "022000"; chord_name = "E minor" 
+    chord_code = "353533"; chord_name = "G7 sus4" 
+    
     
     html_output = generate_full_html(chord_code, chord_name)
     filename = sanitize_filename(chord_name)
