@@ -1,34 +1,5 @@
 import re
 
-def generate_svg_positions(chord_code, chord_name=""):
-    """
-    Generates SVG elements from a 6-char chord code.
-    chord_code: string 6 to 1 (low E → high e), e.g. 'X32010'
-    chord_name: label above the diagram
-    """
-    svg = []
-    string_spacing = 30
-    fret_spacing = 40
-
-    if chord_name:
-        svg.append(f'    <text class="fret-label" x="85" y="-2">{chord_name}</text>')
-
-    for i, fret in enumerate(chord_code):
-        x = 10 + i * string_spacing
-
-        if fret.upper() == 'X':
-            svg.append(f'    <text class="string-muted" x="{x}" y="5">X</text>')
-        elif fret == '0':
-            svg.append(f'    <text class="fret-label" x="{x}" y="5">0</text>')
-        elif fret.isdigit():
-            y = int(fret) * fret_spacing
-            svg.append(f'    <circle class="dot-active" cx="{x}" cy="{y}" r="6" />')
-        else:
-            svg.append(f'<!-- Invalid input on string {6 - i}: {fret} -->')
-
-    return '\n'.join(svg)
-
-
 def generate_full_html(chord_code, chord_name=""):
     """
     Returns full HTML document with embedded SVG chord diagram.
