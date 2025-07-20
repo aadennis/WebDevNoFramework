@@ -91,7 +91,7 @@ def generate_full_html(chord_code, chord_name=""):
 <head>
   <meta charset="UTF-8">
   <title>{chord_name} – Fretboard Diagram</title>
-  <link rel="stylesheet" href="fretboard.css">
+  <link rel="stylesheet" href="../css/fretboard.css">
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg"
@@ -140,7 +140,7 @@ def main():
     
     
     html_output = generate_full_html(chord_code, chord_name)
-    filename = sanitize_filename(chord_name)
+    filename = 'svg_chord_output/' + sanitize_filename(chord_name)
 
     with open(filename, "w", encoding="utf-8") as f:
         f.write(html_output)
