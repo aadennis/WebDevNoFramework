@@ -1,4 +1,5 @@
 import re
+import html
 
 # --- Constants ---
 NOTE_NAMES = ["E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#"]
@@ -54,7 +55,8 @@ def generate_svg_positions(
         svg.append(f'<text class="fret-label" x="85" y="{y_chord_label}">{chord_name}</text>')
 
     if comment:
-        svg.append(f'<text class="chord-comment" x="180" y="{y_chord_label + 20}">{comment}</text>') 
+        escaped_comment = html.escape(comment)
+        svg.append(f'<text class="chord-comment" x="300" y="{y_chord_label + 20}" text-anchor="middle">{escaped_comment}</text>')
 
     for i, fret in enumerate(chord_code):
         string_index = i
@@ -91,8 +93,8 @@ def generate_full_html(chord_code, chord_name="", comment=""):
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg"
-       width="200" height="280"
-       viewBox="-10 -20 220 300"
+       width="600" height="600"
+       viewBox="-10 -20 500 500"
        preserveAspectRatio="xMidYMid meet"
        class="fretboard">
 
