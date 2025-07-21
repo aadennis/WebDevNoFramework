@@ -55,8 +55,16 @@ def generate_svg_positions(
         svg.append(f'<text class="fret-label" x="85" y="{y_chord_label}">{chord_name}</text>')
 
     if comment:
+        num_strings = 6
+        x_offset = x_start
+        diagram_width = (num_strings - 1) * string_spacing
+        comment_x = x_start + diagram_width / 2
+
+        diagram_bottom_y = y_marker_top + num_strings * fret_spacing
+        comment_y = diagram_bottom_y + 30
+
         escaped_comment = html.escape(comment)
-        svg.append(f'<text class="chord-comment" x="300" y="{y_chord_label + 20}" text-anchor="middle">{escaped_comment}</text>')
+        svg.append(f'<text class="chord-comment" x="{comment_x}" y="{comment_y}" text-anchor="middle">{escaped_comment}</text>')
 
     for i, fret in enumerate(chord_code):
         string_index = i
