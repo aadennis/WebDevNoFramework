@@ -40,6 +40,7 @@ def generate_string_lines(x_start=10, string_spacing=30, y_string_start=30, stri
 def generate_svg_positions(
     chord_code,
     chord_name="",
+    comment="",
     x_start=10,
     string_spacing=30,
     fret_spacing=40,
@@ -51,6 +52,9 @@ def generate_svg_positions(
 
     if chord_name:
         svg.append(f'<text class="fret-label" x="85" y="{y_chord_label}">{chord_name}</text>')
+
+    if comment:
+        svg.append(f'<text class="chord-comment" x="180" y="{y_chord_label + 20}">{comment}</text>') 
 
     for i, fret in enumerate(chord_code):
         string_index = i
@@ -73,10 +77,12 @@ def generate_svg_positions(
     return '\n'.join(svg)
 
 # --- HTML Generator ---
-def generate_full_html(chord_code, chord_name=""):
-    svg_positions = generate_svg_positions(chord_code, chord_name)
+def generate_full_html(chord_code, chord_name="", comment=""):
+    svg_positions = generate_svg_positions(chord_code, chord_name, comment)
     fret_lines = generate_fret_lines()
     string_lines = generate_string_lines()
+
+    comment_html = f'<p class="chord-comment">{comment}</p>' if comment else ""
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -84,6 +90,13 @@ def generate_full_html(chord_code, chord_name=""):
   <meta charset="UTF-8">
   <title>{chord_name} – Fretboard Diagram</title>
   <link rel="stylesheet" href="../css/fretboard.css">
+    <style>
+     .chord-comment {{
+    font-family: sans-serif;
+    font-size: 12px;
+    fill: #333;
+    }}
+</style>
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg"
@@ -114,12 +127,17 @@ def read_chord_definitions(filepath):
             line = line.strip()
             if not line or '|' not in line:
                 continue
-            chord_code, chord_name = map(str.strip, line.split('|', 1))
-            yield chord_code, chord_name
+            parts = [part.strip() for part in line.split('|')]
+            if len(parts) == 2:
+                chord_code, chord_name = parts
+                comment = ""
+            elif len(parts) >= 3:
+                chord_code, chord_name, comment = parts[0], parts[1], '|'.join(parts[2:])  # handles extra '|' in comment
+            yield chord_code, chord_name, comment
 
 def batch_generate_html(input_file="code/chords.txt", output_dir="svg_chord_output"):
-    for chord_code, chord_name in read_chord_definitions(input_file):
-        html_output = generate_full_html(chord_code, chord_name)
+    for chord_code, chord_name, comment in read_chord_definitions(input_file):
+        html_output = generate_full_html(chord_code, chord_name, comment)
         filename = f"{output_dir}/{sanitize_filename(chord_name)}"
         with open(filename, "w", encoding="utf-8") as f:
             f.write(html_output)
