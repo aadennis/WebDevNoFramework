@@ -17,7 +17,7 @@ X35555 | C6
 X57777 | D6
 XX5443 | G aug
 X022XX | A5
-020100 | E7 (dominant) version 1
-022130 | E7 (dominant) version 2
+020100 | E7 (dominant) version 1 | Can't take my eyes off you
+022130 | E7 (dominant) version 2 | Can't take my eyes off you
 021100 | Emajor 7
 
