@@ -8,6 +8,12 @@
   text-anchor: middle;
 }
 
+text.chord-comment {
+  font-family: sans-serif;
+  font-size: 12px;
+  fill: #333;
+}
+
 .string-muted {
   fill: #0077cc;
   font-family: sans-serif;

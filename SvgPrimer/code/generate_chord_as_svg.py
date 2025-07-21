@@ -88,13 +88,6 @@ def generate_full_html(chord_code, chord_name="", comment=""):
   <meta charset="UTF-8">
   <title>{chord_name} – Fretboard Diagram</title>
   <link rel="stylesheet" href="../css/fretboard.css">
-    <style>
-    text.chord-comment {{
-        font-family: sans-serif;
-        font-size: 12px;
-        fill: #333;
-    }}
-</style>
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg"
