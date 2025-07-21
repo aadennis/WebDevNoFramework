@@ -56,7 +56,6 @@ def generate_svg_positions(
 
     if comment:
         num_strings = 6
-        x_offset = x_start
         diagram_width = (num_strings - 1) * string_spacing
         comment_x = x_start + diagram_width / 2
 
