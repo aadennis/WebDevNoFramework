@@ -56,8 +56,8 @@ def generate_svg_positions(
 
     if comment:
         num_strings = 6
-        diagram_width = (num_strings - 1) * string_spacing
-        comment_x = x_start + diagram_width / 2
+        diagram_width = num_strings * string_spacing
+        comment_x = x_start + diagram_width
 
         diagram_bottom_y = y_marker_top + num_strings * fret_spacing
         comment_y = diagram_bottom_y + 30
