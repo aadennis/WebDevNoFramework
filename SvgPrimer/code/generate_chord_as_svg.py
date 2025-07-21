@@ -82,8 +82,6 @@ def generate_full_html(chord_code, chord_name="", comment=""):
     fret_lines = generate_fret_lines()
     string_lines = generate_string_lines()
 
-    comment_html = f'<p class="chord-comment">{comment}</p>' if comment else ""
-
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,10 +89,10 @@ def generate_full_html(chord_code, chord_name="", comment=""):
   <title>{chord_name} – Fretboard Diagram</title>
   <link rel="stylesheet" href="../css/fretboard.css">
     <style>
-     .chord-comment {{
-    font-family: sans-serif;
-    font-size: 12px;
-    fill: #333;
+    text.chord-comment {{
+        font-family: sans-serif;
+        font-size: 12px;
+        fill: #333;
     }}
 </style>
 </head>
