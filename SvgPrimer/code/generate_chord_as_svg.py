@@ -63,7 +63,7 @@ def generate_svg_positions(
         comment_y = diagram_bottom_y + 30
 
         escaped_comment = html.escape(comment)
-        svg.append(f'<text class="chord-comment" x="{comment_x}" y="{comment_y}" text-anchor="middle">{escaped_comment}</text>')
+        svg.append(f'<text class="chord-comment" x="{comment_x}" y="{comment_y}" text-anchor="right">{escaped_comment}</text>')
 
     for i, fret in enumerate(chord_code):
         string_index = i
