@@ -1,3 +1,8 @@
+# Generate SVG chord diagrams from a text file containing chord definitions.
+# Example of a chord definition line:
+# X32010 | C Major | well known fingering for C major chord
+# Entry point is the function `batch_generate_html`.
+
 import re
 import html
 
@@ -49,6 +54,8 @@ def generate_svg_positions(
     y_chord_label=-2,
     dot_radius=6
 ):
+    """Generate SVG elements for the chord diagram positions."""
+    # Validate chord_code
     svg = []
 
     if chord_name:

@@ -2,6 +2,7 @@ X02220 | A Major | stuff 1
 X02110 | Am(maj7)
 X02210 | A sus2 | stuff 4   
 X022XX | A5
+X02420 | Aadd9 | A Hard Day's Night, xAEBC#E
 0X222X | A/E | Hey Jude
 2X222X | A/F# | Hey Jude
 4X222X | A/G# | Hey Jude
@@ -14,7 +15,10 @@ X21202 | B7
 X32030 | Cadd9 | A Hard Day's Night
 XX3221 | Caug | All my loving
 X35555 | C6
+X32210 | C6 v2 | stuff 3
 XX0232 | D Major | stuff 5
+XX0231 | D Minor | stuff 5
+XX0211 | Dm7 | stuff 5
 X57777 | D6
 X5453X | D7 v2 | A Hard Day's Night
 XX3121 | E v2 | All my loving
@@ -28,6 +32,7 @@ XX3211 | F* | stuff 11
 XX3213 | Fadd9 | A Hard Day's Night
 XX5443 | Gaug
 320000 | G6 | She loves you
+320001 | G7 | A Hard Day's Night
 353533 | G7 sus4 | A Hard Day's Night
 
 Beatles Songs:
