@@ -5,6 +5,7 @@
 
 import re
 import html
+import os
 
 # --- Constants ---
 NOTE_NAMES = ["E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#"]
@@ -103,7 +104,7 @@ def generate_full_html(chord_code, chord_name="", comment=""):
 <head>
   <meta charset="UTF-8">
   <title>{chord_name} – Fretboard Diagram</title>
-  <link rel="stylesheet" href="../css/fretboard.css">
+  <link rel="stylesheet" href="../../css/fretboard.css">
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg"
@@ -142,15 +143,30 @@ def read_chord_definitions(filepath):
                 chord_code, chord_name, comment = parts[0], parts[1], '|'.join(parts[2:])  # handles extra '|' in comment
             yield chord_code, chord_name, comment
 
+def get_chord_root_folder(chord_name):
+    """Extract the root letter (A-G) from the chord name for folder classification."""
+    match = re.match(r"\s*([A-G])", chord_name.upper())
+    if match:
+        return match.group(1)
+    return "Other"
+
 def batch_generate_html(input_file="code/chords.txt", output_dir="svg_chord_output"):
+    ensure_chord_folders(output_dir)  # 1. Ensure folders exist
     for chord_code, chord_name, comment in read_chord_definitions(input_file):
         html_output = generate_full_html(chord_code, chord_name, comment)
-        filename = f"{output_dir}/{sanitize_filename(chord_name)}"
+        root_folder = get_chord_root_folder(chord_name)
+        folder_path = os.path.join(output_dir, root_folder)
+        os.makedirs(folder_path, exist_ok=True)
+        filename = os.path.join(folder_path, sanitize_filename(chord_name))  # 2. Save to correct folder
         with open(filename, "w", encoding="utf-8") as f:
             f.write(html_output)
         print(f"✅ Generated: {filename}")
 
+def ensure_chord_folders(output_dir="svg_chord_output"):
+    for letter in "ABCDEFG":
+        folder = os.path.join(output_dir, letter)
+        os.makedirs(folder, exist_ok=True)
+
 if __name__ == "__main__":
     batch_generate_html()
 
-    
