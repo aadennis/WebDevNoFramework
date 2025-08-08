@@ -33,7 +33,7 @@ This script ([code/generate_chord_as_svg.py](code/generate_chord_as_svg.py)) gen
 
 Each HTML file contains an SVG diagram styled with [css/fretboard.css](css/fretboard.css).  
 Example output:  
-![A Major Chord Diagram](svg_chord_output/chord-a-major.html)
+![A Major Chord Diagram](svg_chord_output/A/chord-a-major.html)
 
 ## Customization
 
