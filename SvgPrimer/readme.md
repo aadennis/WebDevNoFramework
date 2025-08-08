@@ -20,6 +20,9 @@ This script ([code/generate_chord_as_svg.py](code/generate_chord_as_svg.py)) gen
    ```
    X02220 | A Major | stuff 1
    ```
+   The convention followed uses `X` for muted or unplayed strings and `0` for open strings.
+   In this same convention, which is pretty standard, the first character ('X' in this case) always corresponds to String 6 or 'Low E', and the last character is String 1 or 'High E'.
+  
 
 2. **Run the script**
    ```sh
