@@ -6,7 +6,7 @@ X02420 | Aadd9 | A Hard Day's Night, xAEBC#E
 0X222X | A/E | Hey Jude
 2X222X | A/F# | Hey Jude
 4X222X | A/G# | Hey Jude
-X32010 | C Major | stuff 2
+X32010 | C | stuff 2
 X02222 | A6 | Help!
 X02223 | A7 v2
 X02200 | Asus2 | Help!
