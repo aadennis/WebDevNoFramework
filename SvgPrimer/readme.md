@@ -7,7 +7,7 @@ This script ([code/generate_chord_as_svg.py](code/generate_chord_as_svg.py)) gen
 - Reads chord definitions from a text file (`code/chords.txt`)  
 - Supports chord code, chord name, and optional comments  
 - Outputs styled SVG diagrams to the `svg_chord_output/` directory  
- - within that directory, each chord is placed in its own subdirectory named after the chord  
+  - within that directory, each chord is placed in its own subdirectory named after the chord
 - Automatically labels notes, muted strings, and open strings  
 
 ## Usage
