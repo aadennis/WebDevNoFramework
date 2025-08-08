@@ -31,7 +31,7 @@ This script ([code/generate_chord_as_svg.py](code/generate_chord_as_svg.py)) gen
    ```
 
 3. **View the output**  
-   Generated HTML files will appear in the `svg_chord_output/` directory.
+   Generated HTML files will appear in the `svg_chord_output/` directory, in their own subdirectories named after the chord.
 
 ## Output Example
 
