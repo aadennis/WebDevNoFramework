@@ -25,6 +25,7 @@ XX3121 | E v2 | All my loving
 022000 | E minor | stuff 6
 020100 | E7 (dominant) v1 | Can't take my eyes off you
 022130 | E7 (dominant) v2 | Can't take my eyes off you, Hey Jude
+XX0100 | E7 (dominant) v3 | fly me to the moon
 020000 | Em7 version 1 | stuff 12 
 022030 | Em7 version 2 | stuff 13
 021100 | Emajor 7
