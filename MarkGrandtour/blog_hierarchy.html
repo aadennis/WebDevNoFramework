@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog Materials Folder Structure</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      theme: 'base',
+      themeVariables: {
+        background: '#ffffff',
+        primaryColor: '#ffffff',
+        edgeLabelBackground: '#ffffff',
+        fontFamily: 'Arial',
+        fontSize: '16px',
+        nodeTextColor: '#000000',
+        primaryTextColor: '#000000',
+        secondaryTextColor: '#000000',
+        tertiaryTextColor: '#000000'
+      }
+    });
+  </script>
+</head>
+<body style="background: #fff;">
+  <div class="mermaid">
+%%{init: {"theme": "base", "themeVariables": { "background": "#ffffff", "primaryColor": "#ffffff", "edgeLabelBackground":"#ffffff", "fontFamily": "Arial", "fontSize": "16px", "nodeTextColor": "#000000", "primaryTextColor": "#000000", "secondaryTextColor": "#000000", "tertiaryTextColor": "#000000"}}}%%
+graph TD
+    A[blog assets] --> B[JaredJones]
+    A --> H[AndreaAnother]
+    B --> C[HongKongTrip]
+    B --> D[SafariInAfrica]
+    C --> E[BusyDayInHongKong]
+    E --> F[Text]
+    E --> G[Images]
+    H --> I[...]
+    J[(OneDrive root)] --> A
+  </div>
+</body>
+</html>
